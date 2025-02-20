@@ -20,11 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> pages = [
-    ViolationScreen(),
-    ViolationScreen(),
-    ViolationScreen(),
-    ViolationScreen(),
-    ProfileScreen()
+    const ViolationScreen(),
+    const ViolationScreen(),
+    const ViolationScreen(),
+    const ViolationScreen(),
+    const ProfileScreen()
   ];
   List<String> titles = [
     'الرئيسية',

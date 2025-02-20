@@ -18,7 +18,7 @@ class LoginCubit extends Cubit<BaseCubitState> {
       CacheHelper.saveToken(token: user!.data!.authToken!);
       CacheHelper.saveRefreshToken(refreshToken: user.data!.refreshTokenId!);
       emit(BaseCubitState.done);
-      AppNavigation.navigateOffAll(HomeScreen());
+      AppNavigation.navigateOffAll(const HomeScreen());
     } else {
       emit(BaseCubitState.error);
       CustomSnackBars.showErrorToast(title: "رمز خاطئ");
