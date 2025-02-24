@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:srs/core/resources/colors.dart';
+int currentIndex = 0;
 
 class FilterWidget extends StatefulWidget {
   const FilterWidget({super.key});
@@ -9,7 +10,6 @@ class FilterWidget extends StatefulWidget {
 }
 
 class _FilterWidgetState extends State<FilterWidget> {
-  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Container(

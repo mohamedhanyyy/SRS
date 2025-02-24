@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 import 'package:srs/services/shared_preferences/preferences_helper.dart';
@@ -10,8 +11,9 @@ import 'shared/functions/restart_app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GeneralFunctions.setPreferredOrientation();
+  await  Firebase.initializeApp();
+
   await CacheHelper.init();
-  Firebase.initializeApp;
 
   runApp(const RestartWidget(child: MyApp()));
 }

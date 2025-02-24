@@ -24,6 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Future<void> didChangeDependencies() async {
     super.didChangeDependencies();
+    if (!mounted) return;
+
     await FirebaseCustomNotification.setUpFirebase();
 
   }
