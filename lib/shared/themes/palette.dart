@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Palette {
   static MaterialColor kToDark = MaterialColor(
-    Colors.white.value,
+    Colors.white.toARGB32(),
     <int, Color>{
       50: Colors.white.withValues(alpha: 0.1),
       100: Colors.white.withValues(alpha: 0.2),

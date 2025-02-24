@@ -36,14 +36,14 @@ class _ViolationScreenState extends State<ViolationScreen> {
                   )),
                   const SizedBox(width: 14),
                   GestureDetector(
-                      onTap: (){
-                        showModalBottomSheet(context: context, builder: (context){
-                          return BottomSheet(
-                              
-                              onClosing: (){}, builder: (context){
-                            return FilterWidget();
-                          });
-                        });
+                      onTap: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return BottomSheet(
+                                  onClosing: () {},
+                                  builder: (context) => const FilterWidget());
+                            });
                       },
                       child: Image.asset('assets/images/filter.png'))
                 ],
