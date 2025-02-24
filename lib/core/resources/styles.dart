@@ -122,12 +122,7 @@ const greyText11W400 = TextStyle(
   fontSize: 11,
 );
 
-const blue8w400 = TextStyle(
-  color: AppColors.blue,
-  fontWeight: FontWeight.w400,
-  fontFamily: 'Cairo',
-  fontSize: 8,
-);
+
 
 const black10W400 = TextStyle(
   color: AppColors.blackColor,

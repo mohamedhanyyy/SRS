@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:srs/modules/violation/presentation/widgets/violation_widget.dart';
 import 'package:srs/shared/widgets/custom_text_field.dart';
 
+import '../widgets/filter_widget.dart';
+
 class ViolationScreen extends StatefulWidget {
   const ViolationScreen({super.key});
 
@@ -33,7 +35,17 @@ class _ViolationScreenState extends State<ViolationScreen> {
                     prefixIcon: const Icon(Icons.search),
                   )),
                   const SizedBox(width: 14),
-                  Image.asset('assets/images/filter.png')
+                  GestureDetector(
+                      onTap: (){
+                        showModalBottomSheet(context: context, builder: (context){
+                          return BottomSheet(
+                              
+                              onClosing: (){}, builder: (context){
+                            return FilterWidget();
+                          });
+                        });
+                      },
+                      child: Image.asset('assets/images/filter.png'))
                 ],
               ),
               Padding(

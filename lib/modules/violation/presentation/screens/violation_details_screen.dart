@@ -301,7 +301,9 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(onPressed: (){},
+        floatingActionButton: FloatingActionButton(onPressed: (){
+
+        },
         backgroundColor: const Color(0xff9FE870),
           elevation: 0,
           child: const Icon(Icons.more_horiz),

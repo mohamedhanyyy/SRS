@@ -3,9 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:srs/core/resources/colors.dart';
 import 'package:srs/modules/profile/presentation/screens/profile_screen.dart';
 
+import '../../../../services/notifications/firebase_notification.dart';
 import '../../../violation/presentation/screens/violation_screen.dart';
 
+
 class HomeScreen extends StatefulWidget {
+
+
   const HomeScreen({super.key});
 
   @override
@@ -13,7 +17,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
   int currentIndex = 0;
+
+  @override
+  Future<void> didChangeDependencies() async {
+    super.didChangeDependencies();
+    await FirebaseCustomNotification.setUpFirebase();
+
+  }
   changeIndex(index) {
     currentIndex = index;
     setState(() {});
