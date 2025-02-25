@@ -59,7 +59,6 @@ class CustomTextField extends StatelessWidget {
       textInputAction: textInputAction,
       decoration: InputDecoration(
         counterText: '',
-
         hintText: hintText,
         contentPadding: EdgeInsets.zero,
         hintStyle: lightGrey15W400.copyWith(

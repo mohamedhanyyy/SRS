@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:srs/shared/widgets/custom_divider.dart';
+ import 'package:srs/shared/widgets/custom_divider.dart';
 
 import '../../../../core/resources/colors.dart';
 
@@ -12,6 +12,7 @@ class ViolationDetailsScreen extends StatefulWidget {
 }
 
 class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -19,16 +20,42 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('تفاصيل المخالفة'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: PopupMenuButton<String>(
+                icon: const Icon(Icons.more_horiz, size: 25),
+                position: PopupMenuPosition.under,
+                 padding: EdgeInsets.zero,
+                itemBuilder: (BuildContext context) => [
+                  const PopupMenuItem(
+                    value: '0',
+                    child: Text('خطا في التسجيل'),
+                  ),
+                  const PopupMenuItem(
+                    value: '1',
+                    child: Text('محاسبة داخلية'),
+                  ),
+                  const PopupMenuItem(
+                    value: '3',
+                    child: Text('اقرار'),
+                  ),
+                  const PopupMenuItem(
+                    value: '4',
+                    child: Text('تعديل المخالفة'),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
         body: SingleChildScrollView(
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-
-                 child: Row(
+                child: Row(
                   children: [
                     const Text(
                       "كود المخالفة :",
@@ -56,7 +83,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ),
               const CustomDivider(),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 6,horizontal: 16),
+                padding: EdgeInsets.symmetric(vertical: 6, horizontal: 16),
                 child: Text(
                   'حالة المخالفة',
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
@@ -103,8 +130,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               const CustomDivider(),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
-
-                 child: Text(
+                child: Text(
                   'بيانات الطالب و المخالفة',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
@@ -115,8 +141,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/group.svg'),
+                    SvgPicture.asset('assets/icons/group.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'اسم الطالب',
@@ -138,8 +163,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/person2.svg'),
+                    SvgPicture.asset('assets/icons/person2.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'مسجل المخالفة',
@@ -161,8 +185,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/doc.svg'),
+                    SvgPicture.asset('assets/icons/doc.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'المخالفة',
@@ -184,8 +207,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/doc2.svg'),
+                    SvgPicture.asset('assets/icons/doc2.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'حالة المخالفة',
@@ -207,8 +229,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/doc2.svg'),
+                    SvgPicture.asset('assets/icons/doc2.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'نوع المخالفة',
@@ -222,18 +243,16 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
                 subtitle: const Text(
                   'مخالفة داخلية',
                   style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                    color: Colors.green,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/date.svg'),
+                    SvgPicture.asset('assets/icons/date.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'تاريخ المخالفة',
@@ -247,7 +266,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
                 subtitle: const Text(
                   '12 فبراير 2024',
                   style: TextStyle(
-                     fontSize: 12,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -255,8 +274,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/doc2.svg'),
+                    SvgPicture.asset('assets/icons/doc2.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'العقوبات',
@@ -278,8 +296,7 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ListTile(
                 title: Row(
                   children: [
-                    SvgPicture.asset(
-                        'assets/icons/doc.svg'),
+                    SvgPicture.asset('assets/icons/doc.svg'),
                     const SizedBox(width: 8),
                     const Text(
                       'ملاحظات',
@@ -300,13 +317,6 @@ class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
               ),
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(onPressed: (){
-
-        },
-        backgroundColor: const Color(0xff9FE870),
-          elevation: 0,
-          child: const Icon(Icons.more_horiz),
         ),
       ),
     );
