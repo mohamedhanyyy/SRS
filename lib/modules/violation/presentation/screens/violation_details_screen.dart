@@ -11,6 +11,7 @@ class ViolationDetailsScreen extends StatefulWidget {
   State<ViolationDetailsScreen> createState() => _ViolationDetailsScreenState();
 }
 
+
 class _ViolationDetailsScreenState extends State<ViolationDetailsScreen> {
 
   @override
